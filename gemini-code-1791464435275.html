@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সানপাওয়ার ট্রেডিং অ্যান্ড সলিউশনস | BBISBPSP</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --secondary: #0d9488;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Header & Nav */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.95), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #ccfbf1;
+        }
+
+        .badge-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Section Layout */
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+        }
+
+        .section-title div {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Cards Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Specifications Table */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--dark);
+        }
+
+        /* Contact Details */
+        .contact-box {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-solar-panel"></i>
+                <span>SUNPOWER TRADING & SOLUTIONS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">বিবরণ</a></li>
+                <li><a href="#features">সুবিধাসমূহ</a></li>
+                <li><a href="#specs">কারিগরি বিবরণ</a></li>
+                <li><a href="#compliance">অনুমোদন</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>বাইশারী বাজার সমন্বিত সৌর বিদ্যুৎ ব্যাকআপ সেবা প্রকল্প</h1>
+        <p>বান্দরবান পার্বত্য জেলার নাইক্ষ্যংছড়ির বাইশারী বাজারে বাণিজ্যিক প্রতিষ্ঠান ও ক্ষুদ্র ব্যবসায়ীদের জন্য নিরবচ্ছিন্ন, পরিবেশবান্ধব ও সাশ্রয়ী সোলার হাইব্রিড বিদ্যুৎ ব্যাকআপ ব্যবস্থা।</p>
+        <div class="badge-list">
+            <span class="badge"><i class="fa-solid fa-bolt"></i> ৪০ kWp সোলার ক্যাপাসিটি</span>
+            <span class="badge"><i class="fa-solid fa-battery-full"></i> ৫০ kWh LiFePO4 স্টোরেজ</span>
+            <span class="badge"><i class="fa-solid fa-leaf"></i> শতভাগ গ্রিন এনার্জি</span>
+        </div>
+    </section>
+
+    <!-- Project Features -->
+    <section class="section" id="features">
+        <div class="section-title">
+            <h2>ভবিষ্যৎ কর্মপরিকল্পনা ও সেবাসমূহ</h2>
+            <div></div>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fa-solid fa-store card-icon"></i>
+                <h3>বাণিজ্যিক লোড ব্যাকআপ</h3>
+                <p>বাইশারী বাজারের দোকান ও প্রতিষ্ঠানের পিক আওয়ারে নিরবচ্ছিন্ন বিদ্যুৎ সরবরাহ নিশ্চিত করে ব্যবসা পরিচালনা সহজ রাখা।</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-shield-halved card-icon"></i>
+                <h3>উন্নত অগ্নি ও বিদ্যুৎ সুরক্ষা</h3>
+                <p>CO₂ এবং DCP ফায়ার সেফটি সিস্টেম, ESE লাইটনিং অ্যারেস্টার ও আধুনিক আর্থিং সুরক্ষায় নির্মিত নিরাপদ কন্ট্রোল রুম।</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-chart-line card-icon"></i>
+                <h3>মাইক্রো-গ্রিড নেটওয়ার্ক</h3>
+                <p>ভবিষ্যতে বাজারের চাহিদানুযায়ী ক্যাপাসিটি বৃদ্ধি এবং স্মার্ট প্রি-পেইড/মিটারিং সিস্টেমে ব্যাকআপ সরবরাহ সম্প্রসারণ।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="section" id="specs" style="background-color: #f1f5f9; border-radius: 16px;">
+        <div class="section-title">
+            <h2>প্রকল্পের কারিগরি রূপরেখা (Specifications)</h2>
+            <div></div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>উপাদান</th>
+                        <th>ধারণক্ষমতা / বিবরণ</th>
+                        <th>প্রযুক্তি ও মান</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>সোলার পিভি প্যানেল</strong></td>
+                        <td>৪০ kWp</td>
+                        <td>Tier-1 Mono PERC প্যানেল</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ব্যাটারি এনার্জি স্টোরেজ (BESS)</strong></td>
+                        <td>৫০ kWh</td>
+                        <td>LiFePO4 (লিথিয়াম আয়রন ফসফেট), নিরাপদ ও দীর্ঘস্থায়ী</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ইনভার্টার সিস্টেম</strong></td>
+                        <td>৩৫-৪০ kW হাইব্রিড</td>
+                        <td>অন-গ্রিড ও অফ-গ্রিড ডুয়েল মোড সাপোর্ট</td>
+                    </tr>
+                    <tr>
+                        <td><strong>দৈনিক উৎপাদন সম্ভাবনা</strong></td>
+                        <td>১৪০ – ১৬০ ইউনিট (kWh)</td>
+                        <td>পরিবেশবান্ধব ও শূন্য কার্বন নির্গমন</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Legal & Compliance Details -->
+    <section class="section" id="compliance">
+        <div class="section-title">
+            <h2>আইনি ও সরকারি নিবন্ধনসমূহ</h2>
+            <div></div>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fa-solid fa-certificate card-icon"></i>
+                <h3>বিসিক শিল্প নিবন্ধন</h3>
+                <p>বাংলাদেশ ক্ষুদ্র ও কুটির শিল্প কর্পোরেশন (বিসিক) কর্তৃক অনুমোদিত মাইক্রো শিল্প।</p>
+                <small><strong>সনদ নং:</strong> BA-20261006-0027129</small>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-id-card card-icon"></i>
+                <h3>ট্রেড লাইসেন্স</h3>
+                <p>২ নং বাইশারী ইউনিয়ন পরিষদ থেকে সৌরবিদ্যুৎ স্থাপন ও সরবরাহে নিবন্ধিত।</p>
+                <small><strong>লাইসেন্স নং:</strong> ২০২৬১৩৩১৭৩১৮০০০৩৫</small>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-fire-extinguisher card-icon"></i>
+                <h3>অগ্নি নিরাপত্তা মান</h3>
+                <p>মানসম্মত ফায়ার ফাইটিং লেআউট ও অগ্নিনির্বাপক ব্যবস্থা সম্বলিত কন্ট্রোল রুম।</p>
+                <small><strong>স্ট্যান্ডার্ড:</strong> CO₂ ও DCP এক্সটিঙ্গুইশার সিস্টেম</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>যোগাযোগ ও ঠিকানা</h2>
+            <div></div>
+        </div>
+        <div class="contact-box">
+            <h3>মেসার্স সানপাওয়ার ট্রেডিং অ্যান্ড সলিউশনস</h3>
+            <p style="margin-top: 10px;"><i class="fa-solid fa-user"></i> <strong>স্বত্বাধিকারী:</strong> আব্দুল্লাহ আল হোসাইন</p>
+            <p><i class="fa-solid fa-location-dot"></i> <strong>প্রকল্প ও অফিস:</strong> স্কুল রোড, বাইশারী বাজার, ২ নং বাইশারী ইউনিয়ন, নাইক্ষ্যংছড়ি, বান্দরবান পার্বত্য জেলা - ৪৬৬০</p>
+            <p><i class="fa-solid fa-phone"></i> <strong>মোবাইল:</strong> +৮৮০১৬০২৪৪১৩৬০</p>
+            <p><i class="fa-solid fa-envelope"></i> <strong>ইমেইল:</strong> a.a.hosain1360@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; ২০২৬ সানপাওয়ার ট্রেডিং অ্যান্ড সলিউশনস। সর্বস্বত্ব সংরক্ষিত।</p>
+        <p style="margin-top: 5px;">বাইশারী বাজার সমন্বিত সৌর বিদ্যুৎ ব্যাকআপ সেবা প্রকল্প (BBISBPSP)</p>
+    </footer>
+
+</body>
+</html>
